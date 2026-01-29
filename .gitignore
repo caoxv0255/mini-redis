@@ -1,47 +1,28 @@
-#编译产物
+# 构建目录
+build/
+cmake-build-*/
+bin/
+obj/
+
+# 编译中间文件
 *.o
-*.exe
-*.out
 *.a
 *.so
-
-#可执行文件
-mini-redis
-redis-server
-
-#IDE和编辑器
-.vscode/
-.idea/
-*.swp
-*.sswo
-cat > .gitignore << 'EOF'
-#编译产物
-*.o
+*.dll
 *.exe
 *.out
-*.a
-*.so
 
-#可执行文件
-mini-redis
-redis-server
-
-#IDE和编辑器
+# IDE配置
 .vscode/
 .idea/
-*.swp
-*.swo
+*.suo
+*.sdf
 
-*~
+# 系统文件
+.DS_Store
+Thumbs.db
 
-#调试文件
-*.dSYM/
-*.su
-*.idb
-
-#日志文件
+# 日志和临时文件
 *.log
-
-#临时文件
-tmp/
-temp/
+*.tmp
+*.bak
