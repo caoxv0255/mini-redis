@@ -9,7 +9,8 @@ namespace mini-redis{
 namespace core{
 class KVStore{
 	private:
-		std::unordered_map<std::string, std::string> data;
+		std::unordered_map<std::string, std::string> data_;
+		std::unordered_map<std::string,List> list_data_;
 
 public:
     // 核心操作
@@ -18,6 +19,7 @@ public:
     // 使用std::optional明确表达"key可能不存在"
     std::optional<std::string> get(const std::string& key) const;
 
+    bool lpush(const std::string& key, const std::string& value);
     bool del(const std::string& key);
     size_t size() const { return data_.size(); }
     bool empty() const { return data_.empty(); }
